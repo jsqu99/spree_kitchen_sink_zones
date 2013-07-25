@@ -1,0 +1,8 @@
+<%= render :partial => 'spree/admin/shared/configuration_menu' %>
+
+<%= render 'spree/shared/error_messages', :target => @city %>
+
+<%= form_for([:admin,@country,@state,@city]) do |f| %>
+  <%= render :partial => "form", :locals => { :f => f } %>
+  <%= render :partial => "spree/admin/shared/cities_new_resource_links" %>
+<% end %>
