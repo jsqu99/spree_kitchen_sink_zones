@@ -5,4 +5,8 @@ en:
   spree: 
     cities: Cities
     city_based: City Based
-
+    zipcodes: Zip Codes
+    zipcode_based: Zip Code Based
+    zipcode_placeholder: Choose a Zip Code
+    add_zipcode: Add Zip Codes
+  

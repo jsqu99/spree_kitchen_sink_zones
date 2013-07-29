@@ -1,0 +1,13 @@
+<li class="field">
+  <%= f.hidden_field :zoneable_type, :value => "Spree::Zipcode" %>
+  <%# f.collection_select(:zoneable_id, @zipcodes, :id, :zipcode, {:include_blank => true}, {:class => 'select2' }) %>
+  <%= f.hidden_field :zoneable_id, :class => 'zipcode_select' %>
+
+  <%= remove_nested f %>
+</li>
+
+<script>
+  $(function() {
+    zipcode_autocomplete();
+  });
+</script>

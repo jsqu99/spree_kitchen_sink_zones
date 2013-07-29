@@ -1,0 +1,6 @@
+<!-- insert_after "[data-hook=type] ul li:eq(3)" -->
+
+        <li>
+          <%= zone_form.radio_button('kind', 'zipcode', { :id => 'zipcode_based'} ) %>
+          <%= label_tag :zipcode_based, Spree.t(:zipcode_based) %>
+        </li>

@@ -13,3 +13,10 @@ task :test_app do
   ENV['LIB_NAME'] = 'spree_kitchen_sink_zones'
   Rake::Task['extension:test_app'].invoke
 end
+
+namespace :db do
+  desc "Load Zip Codes"
+  task :load_zipcodes do
+    rails runner "db/default/zipcodes.rb"
+  end
+end

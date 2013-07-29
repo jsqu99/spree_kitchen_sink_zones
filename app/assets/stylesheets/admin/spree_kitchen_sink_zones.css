@@ -1,3 +1,8 @@
 /*
  *= require admin/spree_backend
+ *= require_self
 */
+
+.select2-container.zipcode_select {
+  width: 200px;
+}

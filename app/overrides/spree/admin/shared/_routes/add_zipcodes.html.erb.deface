@@ -1,0 +1,2 @@
+<!-- insert_bottom "script" -->
+  Spree.routes.zipcode_search = "<%= spree.api_zipcodes_url(:format => 'json') %>";

@@ -4,7 +4,8 @@ module Spree
     has_one :zone, :through => :zone_member
     validates_presence_of :zipcode
     validates_uniqueness_of :zipcode
-
-    attr_accessible :zipcode
+    
+    belongs_to :state # currently not linked to cities
+    attr_accessible :zipcode, :city, :state_id
   end
 end
