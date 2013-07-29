@@ -1,14 +1,22 @@
 module Spree
   class Admin::ZipcodesController < Admin::ResourceController
+    respond_to :html
+
+    before_filter :load_states, :only => [:new, :edit]
 
     def index
-      respond_with(@collection) do |format|
-        format.html
-        format.js  { render :partial => 'zipcode_list.html.erb' }
-      end
+      @search = Spree::Zipcode.order(:zipcode).ransack(params[:q])
+
+      @zipcodes = @search.result.page(params[:page]).
+        per(params[:per_page] || Spree::Config[:orders_per_page])
+      respond_with(@zipcodes)
     end
 
     protected
+
+    def load_states
+      @states = Spree::State.order(:name)
+    end      
 
     def location_after_save
       admin_zipcodes_url
