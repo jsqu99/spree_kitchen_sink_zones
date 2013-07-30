@@ -9,10 +9,14 @@ module Spree
           # this was horrible, performance-wise
           # @zipcodes = Spree::Zipcode.scoped.ransack(params[:q]).result
 
-          arel_table = Spree::Zipcode.arel_table
-          @zipcodes = Spree::Zipcode.where(arel_table[:zipcode].matches("#{params[:q][:zipcode_start]}%"))
-
+          if params[:q][:zipcode_start].present?
+            arel_table = Spree::Zipcode.arel_table
+            @zipcodes = Spree::Zipcode.where(arel_table[:zipcode].matches("#{params[:q][:zipcode_start]}%"))
+          else
+            @zipcodes = Spree::Zipcode.scoped
+          end
         end
+
         respond_with(@zipcodes)
       end
 

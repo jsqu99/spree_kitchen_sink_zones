@@ -9,4 +9,7 @@ en:
     zipcode_based: Zip Code Based
     zipcode_placeholder: Choose a Zip Code
     add_zipcode: Add Zip Codes
+    listing_zipcodes: Listing Zip Codes
+    new_zipcode: New Zip Code
+    editing_zipcode: Editing Zip Code
   
